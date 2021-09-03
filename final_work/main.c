@@ -79,6 +79,8 @@ int main(int argc, char **argv)
         }
     }
 
+    char line[16];
+
     FILE *f = fopen(filename, "r");
     if (!f) 
     {
@@ -91,7 +93,7 @@ int main(int argc, char **argv)
     {
         struct meas m;
 
-        int scanfret = fscanf(f, "%d;%d;%d;%d;%d;%d",
+        int scanfret = fscanf(f, "%d;%d;%d;%d;%d;%d\n",
                 &m.year,
                 &m.month,
                 &m.day,
@@ -99,6 +101,13 @@ int main(int argc, char **argv)
                 &m.minute,
                 &m.temp);
         
+
+            if(scanfret!=6)
+            {
+                fscanf(f, "%s\n", line);
+                printf("\x1b[31mError read line № %d.\x1b[0m\n",mins_in_y + 1);
+                continue;
+            }
 
         mins_in_y++;
 
