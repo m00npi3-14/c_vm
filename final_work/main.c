@@ -98,15 +98,17 @@ int main(int argc, char **argv)
 
         mins_in_y++;
 
-        min_year(p_min, m.temp);
-        max_year(p_max, m.temp);
-        mean_year(p_sum_y, m.temp);
-
         if(m.month == month_num)
         {
             minimum_month(p_min_month, m.temp);
             maximum_month(p_max_month, m.temp);
             mean_month(p_ctr, p_sum_m, m.temp);
+        }
+        else
+        {
+            min_year(p_min, m.temp);
+            max_year(p_max, m.temp);
+            mean_year(p_sum_y, m.temp);
         }
         
     }
