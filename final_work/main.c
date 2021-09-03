@@ -68,10 +68,14 @@ int main(int argc, char **argv)
 
             case 'm' : {
                 month_num = atoi(optarg);
+                if(month_num > 12 || month_num < 1)
+                {
+                    printf("Wrong month number\n");
+                    exit(EXIT_FAILURE);
+                }
                 argum = 1;
                 break;
             }
-        
         }
     }
 
@@ -110,7 +114,6 @@ int main(int argc, char **argv)
             max_year(p_max, m.temp);
             mean_year(p_sum_y, m.temp);
         }
-        
     }
 
     if(argum == 1)
