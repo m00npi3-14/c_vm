@@ -18,7 +18,7 @@ void help(const char *appname)
     printf("You are in %s\n", appname);
 }
 
-void min_year(int* pointer, int temperature)
+void minimal(int* pointer, int temperature)
 {
     if(temperature < *pointer)
     {
@@ -26,23 +26,7 @@ void min_year(int* pointer, int temperature)
     }
 }
 
-void max_year(int* pointer, int temperature)
-{
-    if(temperature > *pointer)
-    {
-        *pointer = temperature;
-    }
-}
-
-void minimum_month(int* pointer, int temperature)
-{
-    if(temperature < *pointer)
-    {
-        *pointer = temperature;
-    }
-}
-
-void maximum_month(int* pointer, int temperature)
+void maximal(int* pointer, int temperature)
 {
     if(temperature > *pointer)
     {
